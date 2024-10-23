@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Hospital Management System</title>
+</head>
+<body>
+    <!-- Navigation bar for Login and Signup buttons -->
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Hospital Management System</a>
+        <div class="ml-auto">
+            <a href="login.html" class="btn btn-primary mr-2">Login</a>
+            <a href="signup.html" class="btn btn-secondary">Sign Up</a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Welcome to Hospital Management System</h1>
+
+        <!-- Patient Detail Section -->
+        <div class="mt-4">
+            <h2>View Patient Details</h2>
+            <form id="patientForm">
+                <div class="form-group">
+                    <label for="patientId">Enter Patient ID</label>
+                    <input type="number" class="form-control" id="patientId" placeholder="Enter patient ID" required>
+                </div>
+                <button type="submit" class="btn btn-info">View Details</button>
+            </form>
+            <div id="patientDetails" class="mt-2"></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script>
+        // Handle Patient Detail Form
+        document.getElementById('patientForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const patientId = document.getElementById('patientId').value;
+
+            // Simulate patient detail fetch (In future, fetch from backend)
+            if (patientId === '123') {
+                document.getElementById('patientDetails').innerText = 'Patient found: John Doe, Age 30, History: None';
+            } else {
+                document.getElementById('patientDetails').innerText = 'Patient not found';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Login - Hospital Management System</title>
+</head>
+<body>
+    <!-- Home button in the top-left corner -->
+    <nav class="navbar navbar-light bg-light">
+        <a href="index.html" class="btn btn-outline-primary">Home</a>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="loginUsername">Username</label>
+                <input type="text" class="form-control" id="loginUsername" placeholder="Enter username" required>
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <input type="password" class="form-control" id="loginPassword" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        <div id="loginStatus" class="mt-2"></div>
+    </div>
+
+    <script>
+        // Handle Login Form
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+
+            // Simulate login check (In future, connect to backend)
+            if (username === 'admin' && password === 'password') {
+                document.getElementById('loginStatus').innerText = 'Login successful!';
+            } else {
+                document.getElementById('loginStatus').innerText = 'Invalid username or password';
+            }
+        });
+    </script>
+</body>
+</html>
